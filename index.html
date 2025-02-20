@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLASH AI S1 - ADMIN PANEL</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- SPLASH SCREEN -->
+    <div class="splash">
+        <h1>Welcome To The FLASH AI S1 ADMIN PANEL</h1>
+        <div class="loader"></div>
+    </div>
+
+    <!-- MAIN PANEL -->
+    <div class="container">
+        <h1>Generate Key</h1>
+        <button onclick="openExpiryDialog()">Set Expiry</button>
+        <p id="expiryText">Expiry: Not Set</p>
+        <p id="generatedKey">Key: Not Generated</p>
+        <button onclick="generateKey()">Generate Key</button>
+        <button onclick="copyKey()">Copy Key</button>
+        <button onclick="openUserList()">Manage Users</button>
+    </div>
+
+    <!-- EXPIRY SELECTION FLOATING DIALOG -->
+    <div class="floating" id="expiryDialog">
+        <h3>Select Expiry</h3>
+        <button onclick="setExpiry('1 Day')">1 Day</button>
+        <button onclick="setExpiry('3 Days')">3 Days</button>
+        <button onclick="setExpiry('7 Days')">7 Days</button>
+        <button onclick="setExpiry('14 Days')">14 Days</button>
+        <button onclick="setExpiry('30 Days')">30 Days</button>
+        <button onclick="setExpiry('Permanent')">Permanent</button>
+        <br>
+        <button class="close-btn" onclick="closeExpiryDialog()">Close</button>
+    </div>
+
+    <!-- USER LIST PANEL -->
+    <div class="user-list" id="userListPanel">
+        <h3>Active Keys</h3>
+        <div id="userList"></div>
+        <button class="close-btn" onclick="closeUserList()">Close</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+          </html>
